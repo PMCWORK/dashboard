@@ -1,0 +1,78 @@
+:root {
+  --ink: #1c2430;
+  --ink-soft: #2a3444;
+  --parchment: #f3ede1;
+  --parchment-line: #e3d9c6;
+  --brass: #c69a3b;
+  --brass-deep: #a87c24;
+  --teal: #33635d;
+  --rust: #a8442f;
+  --text-main: #26241d;
+  --text-muted: #6b6455;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--parchment);
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Perforated / torn-receipt divider ─────────────────────────────────── */
+.tear-edge {
+  height: 14px;
+  background-image: radial-gradient(circle at 10px 0, transparent 9px, var(--parchment) 10px);
+  background-size: 20px 14px;
+  background-repeat: repeat-x;
+}
+
+/* ── Responsive layout ──────────────────────────────────────────────────── */
+.grid2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 760px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+  .masthead {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 16px;
+  }
+}
+
+/* ── Focus visibility ───────────────────────────────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--brass-deep);
+  outline-offset: 2px;
+}
