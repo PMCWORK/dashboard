@@ -7,5 +7,5 @@ import react from '@vitejs/plugin-react'
 // for the Cloudflare Access setup in the README — use base: '/' instead.
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: './',
 })
